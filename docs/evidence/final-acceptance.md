@@ -1,0 +1,13 @@
+# Parent final acceptance — source/web scope
+
+23 October2026. **PASS for the versioned source and browser-preview scope.** This is an assisted parent assessment, not human approval or native device/signing acceptance.
+
+- Existing Ghostzy0/standby-pro remains public MIT, default master, original9ce5e167 history is an ancestor, six stars retained. Metadata/homepage/topics now describe the actual source/web preview.
+- Exact historical tag: https://github.com/Ghostzy0/standby-pro/releases/tag/v1.0.0-baseline.1 . Separate clean source baseline: https://github.com/Ghostzy0/standby-pro-baseline/releases/tag/v1.0.0-baseline.2 . Remote recovery verifies all83 app files against original source hashes; packaging-only correction is explicit and old tags are not rewritten.
+- Improved release: https://github.com/Ghostzy0/standby-pro/releases/tag/v1.1.0-preview.1 . Source tag756bcdc94280fedb93d3f8fe2fb9b4843e66e280. Final remote-clone locked dependencies, analysis, all34 tests and web compilation passed. Independent artifact audit matches all150 source paths/bytes and all36 compiled demo files.
+- All published improved attachments were downloaded independently from GitHub and every SHA256 manifest entry passed. No detected credential/private-path/ref-image/Git-object/symlink inclusion in the release archives. Full resolved notices and bundled font licences are supplied.
+- Both public sites returnHTTP200 for landing pages and pictures; main setup/privacy/sitemap/demo/font assets also return200. https://ghostzy0.github.io/standby-pro/ and https://ghostzy0.github.io/standby-pro-baseline/ are GitHub Pages built deployments.
+- The deployed HTTPS main site passed the actual Chrome headless desktop/mobile workflow: preset, real countdown/pause/reset, settings/About/back, Quiet display restore by Enter and390×844 navigation. Fresh context, reduced motion, no page errors; tested weather-off Latin UI contacted only ghostzy0.github.io. This is live browser evidence, not phone evidence.
+- Local and live screenshots were visually inspected. Three independent assisted audits plus a final artifact review are saved. Parent reviewed source, runtime results, artefact integrity, repository preservation and actual publication/recovery.
+
+**Not accepted:** physical Android/iPhone, production signing/update identity, TalkBack/VoiceOver and native keyboard, charger/lock/battery saver, battery/thermal/OLED longevity, arbitrary glyph fallback egress, real calendar/media integration, system StandBy/WidgetKit or background alarm. External-app replica fidelity remains unestablished. These boundaries are visible in the release and sites. Next action is physical Android acceptance under a controlled signing identity, tracked in issue#4.

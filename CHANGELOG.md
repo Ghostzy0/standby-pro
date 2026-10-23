@@ -4,9 +4,9 @@
 
 Exact historical source `9ce5e1676a1eae2681037d75eb354cd76addf207`, root VERSION 1.00 / app 1.0.0+1. No source patch or redesign. No production binary promised. Current verification and known shortcomings are documented separately; original May verification is historical only.
 
-## Improvement — in progress
+## Improvement planning checkpoint
 
-See PLAN.md and CONTEXT.md. No improved release published yet.
+The planned improvement is published below as1.1.0-preview.1. See PLAN.md and CONTEXT.md for the accepted source/web scope and remaining native gates.
 
 ## v1.1.0-preview.1 — source and browser preview,23 October2026
 

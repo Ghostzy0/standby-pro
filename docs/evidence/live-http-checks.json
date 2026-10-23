@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://ghostzy0.github.io/standby-pro/",
+    "status": 200,
+    "bytes": 7292,
+    "content_type": "text/html; charset=utf-8"
+  },
+  {
+    "url": "https://ghostzy0.github.io/standby-pro/guide.html",
+    "status": 200,
+    "bytes": 4094,
+    "content_type": "text/html; charset=utf-8"
+  },
+  {
+    "url": "https://ghostzy0.github.io/standby-pro/privacy.html",
+    "status": 200,
+    "bytes": 3317,
+    "content_type": "text/html; charset=utf-8"
+  },
+  {
+    "url": "https://ghostzy0.github.io/standby-pro/sitemap.xml",
+    "status": 200,
+    "bytes": 313,
+    "content_type": "application/xml"
+  },
+  {
+    "url": "https://ghostzy0.github.io/standby-pro/assets/browser-display.png",
+    "status": 200,
+    "bytes": 59336,
+    "content_type": "image/png"
+  },
+  {
+    "url": "https://ghostzy0.github.io/standby-pro/demo/",
+    "status": 200,
+    "bytes": 658,
+    "content_type": "text/html; charset=utf-8"
+  },
+  {
+    "url": "https://ghostzy0.github.io/standby-pro/demo/assets/assets/fonts/Roboto-Regular.ttf",
+    "status": 200,
+    "bytes": 171676,
+    "content_type": "font/ttf"
+  },
+  {
+    "url": "https://ghostzy0.github.io/standby-pro-baseline/",
+    "status": 200,
+    "bytes": 5048,
+    "content_type": "text/html; charset=utf-8"
+  },
+  {
+    "url": "https://ghostzy0.github.io/standby-pro-baseline/assets/baseline.png",
+    "status": 200,
+    "bytes": 269784,
+    "content_type": "image/png"
+  }
+]
