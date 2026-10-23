@@ -26,12 +26,6 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSCalendarsFullAccessUsageDescription</key>
-	<string>Standby Pro uses calendar access to show upcoming events on your standby display.</string>
-	<key>NSCalendarsUsageDescription</key>
-	<string>Standby Pro uses calendar access to show upcoming events on your standby display.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Standby Pro uses your location while the app is open to show local weather and location-aware standby information.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
