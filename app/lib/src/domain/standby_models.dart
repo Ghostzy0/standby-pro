@@ -7,6 +7,8 @@ enum ClockStyle { digital, analog, flip, text }
 
 enum StandbyWidgetType { clock, weather, calendar, music }
 
+const standbyWeatherCities = <String>['London', 'New York', 'Tokyo', 'Sydney'];
+
 T _enumFromName<T extends Enum>(List<T> values, Object? name, T fallback) {
   if (name is! String) return fallback;
   for (final value in values) {
@@ -111,6 +113,8 @@ class StandbySettings {
     this.fontScale = 1,
     this.fontWeight = 820,
     this.glowIntensity = 0.28,
+    this.weatherEnabled = false,
+    this.weatherCity = 'London',
   });
 
   final StandbyLayoutMode layoutMode;
@@ -129,6 +133,8 @@ class StandbySettings {
   final double fontScale;
   final int fontWeight;
   final double glowIntensity;
+  final bool weatherEnabled;
+  final String weatherCity;
 
   ThemePreset get theme => themeById(activeThemeId);
 
@@ -149,6 +155,8 @@ class StandbySettings {
     double? fontScale,
     int? fontWeight,
     double? glowIntensity,
+    bool? weatherEnabled,
+    String? weatherCity,
   }) {
     return StandbySettings(
       layoutMode: layoutMode ?? this.layoutMode,
@@ -168,6 +176,8 @@ class StandbySettings {
       fontScale: fontScale ?? this.fontScale,
       fontWeight: fontWeight ?? this.fontWeight,
       glowIntensity: glowIntensity ?? this.glowIntensity,
+      weatherEnabled: weatherEnabled ?? this.weatherEnabled,
+      weatherCity: weatherCity ?? this.weatherCity,
     );
   }
 
@@ -189,18 +199,41 @@ class StandbySettings {
       'fontScale': fontScale,
       'fontWeight': fontWeight,
       'glowIntensity': glowIntensity,
+      'weatherEnabled': weatherEnabled,
+      'weatherCity': weatherCity,
     };
   }
 
   factory StandbySettings.fromJson(Map<String, Object?> json) {
     const defaults = StandbySettings();
+    double finiteDouble(String key, double fallback, double min, double max) {
+      final value = json[key];
+      if (value is! num || !value.toDouble().isFinite) return fallback;
+      return value.toDouble().clamp(min, max).toDouble();
+    }
+
+    bool boolValue(String key, bool fallback) =>
+        json[key] is bool ? json[key] as bool : fallback;
+
+    final requestedCity = json['weatherCity'];
+    final city =
+        requestedCity is String && standbyWeatherCities.contains(requestedCity)
+        ? requestedCity
+        : defaults.weatherCity;
+    final requestedTheme = json['activeThemeId'];
+    final themeId =
+        requestedTheme is String &&
+            standbyThemes.any((theme) => theme.id == requestedTheme)
+        ? requestedTheme
+        : defaults.activeThemeId;
+
     return StandbySettings(
       layoutMode: _enumFromName(
         StandbyLayoutMode.values,
         json['layoutMode'],
         defaults.layoutMode,
       ),
-      activeThemeId: json['activeThemeId'] as String? ?? defaults.activeThemeId,
+      activeThemeId: themeId,
       clockStyle: _enumFromName(
         ClockStyle.values,
         json['clockStyle'],
@@ -216,27 +249,46 @@ class StandbySettings {
         json['rightWidget'],
         defaults.rightWidget,
       ),
-      showSeconds: json['showSeconds'] as bool? ?? defaults.showSeconds,
-      nightModeEnabled:
-          json['nightModeEnabled'] as bool? ?? defaults.nightModeEnabled,
-      burnInProtection:
-          json['burnInProtection'] as bool? ?? defaults.burnInProtection,
-      keepAwakeWhileCharging:
-          json['keepAwakeWhileCharging'] as bool? ??
-          defaults.keepAwakeWhileCharging,
-      use24HourTime: json['use24HourTime'] as bool? ?? defaults.use24HourTime,
-      brightness:
-          (json['brightness'] as num?)?.toDouble() ?? defaults.brightness,
-      nightTintIntensity:
-          (json['nightTintIntensity'] as num?)?.toDouble() ??
-          defaults.nightTintIntensity,
-      animationIntensity:
-          (json['animationIntensity'] as num?)?.toDouble() ??
-          defaults.animationIntensity,
-      fontScale: (json['fontScale'] as num?)?.toDouble() ?? defaults.fontScale,
-      fontWeight: (json['fontWeight'] as num?)?.round() ?? defaults.fontWeight,
-      glowIntensity:
-          (json['glowIntensity'] as num?)?.toDouble() ?? defaults.glowIntensity,
+      showSeconds: boolValue('showSeconds', defaults.showSeconds),
+      nightModeEnabled: boolValue(
+        'nightModeEnabled',
+        defaults.nightModeEnabled,
+      ),
+      burnInProtection: boolValue(
+        'burnInProtection',
+        defaults.burnInProtection,
+      ),
+      keepAwakeWhileCharging: boolValue(
+        'keepAwakeWhileCharging',
+        defaults.keepAwakeWhileCharging,
+      ),
+      use24HourTime: boolValue('use24HourTime', defaults.use24HourTime),
+      brightness: finiteDouble('brightness', defaults.brightness, 0.05, 1),
+      nightTintIntensity: finiteDouble(
+        'nightTintIntensity',
+        defaults.nightTintIntensity,
+        0,
+        1,
+      ),
+      animationIntensity: finiteDouble(
+        'animationIntensity',
+        defaults.animationIntensity,
+        0,
+        1,
+      ),
+      fontScale: finiteDouble('fontScale', defaults.fontScale, 0.5, 2),
+      fontWeight:
+          (json['fontWeight'] is num && (json['fontWeight'] as num).isFinite)
+          ? (json['fontWeight'] as num).round().clamp(100, 900).toInt()
+          : defaults.fontWeight,
+      glowIntensity: finiteDouble(
+        'glowIntensity',
+        defaults.glowIntensity,
+        0,
+        1,
+      ),
+      weatherEnabled: boolValue('weatherEnabled', defaults.weatherEnabled),
+      weatherCity: city,
     );
   }
 
@@ -258,7 +310,9 @@ class StandbySettings {
         _sameDouble(other.animationIntensity, animationIntensity) &&
         _sameDouble(other.fontScale, fontScale) &&
         other.fontWeight == fontWeight &&
-        _sameDouble(other.glowIntensity, glowIntensity);
+        _sameDouble(other.glowIntensity, glowIntensity) &&
+        other.weatherEnabled == weatherEnabled &&
+        other.weatherCity == weatherCity;
   }
 
   @override
@@ -279,6 +333,8 @@ class StandbySettings {
     fontScale,
     fontWeight,
     glowIntensity,
+    weatherEnabled,
+    weatherCity,
   );
 }
 
@@ -301,16 +357,16 @@ class WeatherSnapshot {
     required this.city,
     required this.condition,
     required this.temperatureCelsius,
-    required this.highCelsius,
-    required this.lowCelsius,
+    this.highCelsius,
+    this.lowCelsius,
     required this.updatedAt,
   });
 
   final String city;
   final String condition;
   final int temperatureCelsius;
-  final int highCelsius;
-  final int lowCelsius;
+  final int? highCelsius;
+  final int? lowCelsius;
   final DateTime updatedAt;
 }
 

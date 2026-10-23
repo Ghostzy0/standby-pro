@@ -10,14 +10,24 @@ class SettingsRepository {
   final SharedPreferences _preferences;
 
   Future<StandbySettings> load() async {
-    final raw = _preferences.getString(_settingsKey);
-    if (raw == null) return const StandbySettings();
-    final decoded = jsonDecode(raw);
-    if (decoded is! Map<String, Object?>) return const StandbySettings();
-    return StandbySettings.fromJson(decoded);
+    try {
+      final raw = _preferences.getString(_settingsKey);
+      if (raw == null) return const StandbySettings();
+      final decoded = jsonDecode(raw);
+      if (decoded is! Map<String, Object?>) return const StandbySettings();
+      return StandbySettings.fromJson(decoded);
+    } on FormatException {
+      return const StandbySettings();
+    } on TypeError {
+      return const StandbySettings();
+    }
   }
 
   Future<void> save(StandbySettings settings) async {
-    await _preferences.setString(_settingsKey, jsonEncode(settings.toJson()));
+    final saved = await _preferences.setString(
+      _settingsKey,
+      jsonEncode(settings.toJson()),
+    );
+    if (!saved) throw StateError('Preferences did not persist settings.');
   }
 }

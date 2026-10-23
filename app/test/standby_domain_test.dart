@@ -24,6 +24,8 @@ void main() {
       fontScale: 1.18,
       fontWeight: 820,
       glowIntensity: 0.61,
+      weatherEnabled: true,
+      weatherCity: 'Tokyo',
     );
 
     final roundTrip = StandbySettings.fromJson(settings.toJson());
@@ -49,6 +51,33 @@ void main() {
     await repository.save(expected);
 
     expect(await repository.load(), expected);
+  });
+
+  test('settings repository recovers from corrupted stored JSON', () async {
+    SharedPreferences.setMockInitialValues({'standby_settings_v1': '{broken'});
+    final repository = SettingsRepository(
+      await SharedPreferences.getInstance(),
+    );
+
+    expect(await repository.load(), const StandbySettings());
+  });
+
+  test('settings loading clamps invalid values and defaults unknown city', () {
+    final settings = StandbySettings.fromJson({
+      'brightness': 4,
+      'fontScale': -1,
+      'fontWeight': 4000,
+      'weatherEnabled': 'yes',
+      'weatherCity': 'Somewhere',
+      'activeThemeId': 'untrusted-theme',
+    });
+
+    expect(settings.brightness, 1);
+    expect(settings.fontScale, 0.5);
+    expect(settings.fontWeight, 900);
+    expect(settings.weatherEnabled, isFalse);
+    expect(settings.weatherCity, 'London');
+    expect(settings.activeThemeId, 'aurora');
   });
 
   test(
