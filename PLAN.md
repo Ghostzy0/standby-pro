@@ -21,10 +21,12 @@ Primary job: read the time at a glance, then deliberately change display or run 
 
 ## Dependencies, risks and limits
 
-Use existing Flutter packages; generate dependency notices from resolved packages. MIT source licence does not clear third-party reference screenshots: retain historical tree, exclude unrelated references from improved release distribution and explain removal. Open-Meteo free endpoint noncommercial; explicit opt-in and attribution, no paid API fallback. No analytics/ads/accounts. Physical Android, iPhone signing/lockscreen/charging/long-run OLED and battery behaviour remain owner/device gates. This host is Apple Silicon/macOS with Xcode 27.1, no Flutter/Java/Android SDK initially found; ample disk but avoid huge unnecessary runtimes. Existing peer campaigns share atomic heavy/UI leases; never steal locks.
+Use existing Flutter packages; generate dependency notices from resolved packages. MIT source licence does not clear third-party reference screenshots: retain historical tree, exclude unrelated references from improved release distribution and explain removal. Open-Meteo free endpoint noncommercial; explicit opt-in and attribution, no paid API fallback. No analytics/ads/accounts. Physical Android, iPhone signing/lockscreen/charging/long-run OLED and battery behaviour remain owner/device gates. Recorded host is Apple Silicon/macOS with Xcode27.1. Flutter3.41.9 was obtained and used; a Homebrew JDK17 exists but Android platform SDK and CocoaPods are not available in the current build setup. No new signing/device permissions were requested.
 
 ## Evidence criteria
 
 Every claim names source inspection, command/build, synthetic widget/browser run or physical device. Save commands/results and screenshots in docs/evidence; preserve public-safe unique evidence remotely before deleting owned outputs. Reproduce from clean clone/lockfile, inspect distributed archive contents, SHA256 every attached artifact, verify remote release links and Pages responses. Never label assisted review human approval.
 
-**Next action:** obtain/verify Flutter tooling and run exact baseline tests, then publish the archival baseline with its actual evidence.
+**Source/browser milestones completed:** baseline preserved, improved engine/screens implemented,34 tests plus analysis/web build passed, three assisted reviews completed, source/web release and static documentation prepared. Physical/signing/AT/long-run gates remain in issue#4.
+
+**Next action:** physical Android acceptance with a controlled signing identity; retain all documented native and fidelity limits.

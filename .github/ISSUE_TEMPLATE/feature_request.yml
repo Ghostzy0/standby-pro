@@ -1,0 +1,14 @@
+name: Feature request
+description: Propose a focused bedside workflow improvement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What task is difficult today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Suggested behaviour and platform
+      description: Mention any permissions, network service or battery expectations.

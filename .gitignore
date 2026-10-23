@@ -13,3 +13,5 @@ app/ios/Flutter/ephemeral/
 app/ios/Pods/
 app/ios/.symlinks/
 *.log
+docs/demo
+.DS_Store

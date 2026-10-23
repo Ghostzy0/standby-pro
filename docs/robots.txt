@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /standby-pro/
+Sitemap: https://ghostzy0.github.io/standby-pro/sitemap.xml

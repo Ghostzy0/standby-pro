@@ -1,12 +1,21 @@
-# Resumable context
+# Standby Pro continuation
 
-23 October 2026 — authorised autonomous Standby Pro baseline + separate improvement + honest public discovery. Owner asleep; no paid services, account/signing prompts, social posts, private data or unrelated project changes. Only scoped gpt-6-luna subagents. Parent retains default model.
+Updated23 October2026. This is the active improved app repository. Original source/history/package identity are preserved. The separate historical source baseline is https://github.com/Ghostzy0/standby-pro-baseline . No faithful third-party replica is established; see docs/releases/provenance-and-fidelity.md.
 
-- Checkout: isolated `standby-pro` directory in this chat workspace. Remote existing `Ghostzy0/standby-pro`; default `master`, admin confirmed, six stars, no tags/releases/issues/PRs at start.
-- Baseline pinned: `9ce5e1676a1eae2681037d75eb354cd76addf207`. Branch `codex/baseline-documentation`; no app source changes yet. Plan in PLAN.md. Original PLAN/MEMORY copies in docs/releases.
-- Research: docs/research/platform-and-product.md; independent source review: docs/audits/01-baseline-source.md. Critical gaps: synthetic integrations; invented forecast extrema; absent iOS bridge; misleading charger label; async/persistence resilience; unlicensed competitor reference captures.
-- Host Apple Silicon; Xcode 27.1 installed, simulator runtimes exist but none booted. Flutter/Java/Android SDK not found in initial bounded searches. Download manifest returned 404; shallow Flutter 3.41.9 clone being attempted into chat `work/flutter`. Do not assume SDK ready.
-- Shared resources: `/Users/ghost/Documents/ChatGPT/Pip Reps/.local-evidence/coordination`. Read queue/owner receipts, atomic mkdir heavy-1.lock/heavy-2.lock and ui.lock with owner metadata, release only own lease in finally. No peer source changes or process kills.
-- GitHub connector get_repo argument binding failed; authenticated `gh` works. All PRs must be attached via app attach_artifact. GitHub public releases and free Pages authorised. No CI paid budget or external API charges authorised.
+## Source and version
 
-Next action: finish baseline tool checks/tests, publish exact-source prerelease, then implement engine and coherent screen improvements on a separate codex branch with Luna audits.
+- Historical source:9ce5e1676a1eae2681037d75eb354cd76addf207, tag v1.0.0-baseline.1 in this repository; app1.0.0+1.
+- Improved app:1.1.0+2, source/web prerelease v1.1.0-preview.1. Engine, interface, typography and documentation are separate focused PRs. No production signed native binary is claimed.
+- Flutter3.41.9/Dart3.11.5; existing dependencies locked. Android package ID com.ytchannel.standbypro. Preferences retain standby_settings_v1. New weather opt-in fields default off for migrated data.
+
+## Completed checks and decisions
+
+Baseline10 tests and analysis passed before changes. Improved34 tests, analysis and web release build passed in a fresh remote clone. Chrome headless exercised presets, real timer countdown/pause/reset, settings/about/back, quiet restore via keyboard and390×844 navigation. Widget tests cover320×568,844×390 and2× text scale. Actual screenshots and public-safe logs are in docs/evidence and docs/assets. Three assisted review rounds cover baseline/platform, UI/UX and release/security; parent review checks exact source/artifacts and remote recovery separately. Assisted review is not human approval.
+
+Weather is optional city selection without GPS. No calendar/media native integration is claimed. App-local dimming works independently of native support. Android foreground keep-awake is labelled accurately; iOS/web native controls remain unavailable. Sensitive unused permissions and implicit debug release signing are removed. Roboto fonts and licences are bundled after the browser revealed an implicit remote font request; the final weather-off tested path contacted only the preview origin.
+
+## Remaining gates
+
+Physical Android/iPhone, production signing/update identity, TalkBack/VoiceOver, charging/lock-screen/battery-saver, long-run thermal/OLED and background timer reliability remain unaccepted in issue#4. No paid service fallback exists. Open-Meteo free endpoint is noncommercial; commercial distribution needs suitable service rights. The visual timer is not a background alarm. Arbitrary missing-glyph font fallback paths are not covered by the Latin UI network test.
+
+Next action: reproduce the chosen release on a physical Android phone with a controlled signing identity, then record foreground/background/lock/unplug and accessibility results in issue#4. Do not turn widget/browser evidence into phone-readiness claims.

@@ -1,0 +1,4 @@
+guide.html: metadata, JSON-LD, image labels and local links passed
+index.html: metadata, JSON-LD, image labels and local links passed
+privacy.html: metadata, JSON-LD, image labels and local links passed
+Static check only; no crawl, ranking, screen-reader or live deployment claim.
