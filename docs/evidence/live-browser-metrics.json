@@ -1,0 +1,19 @@
+{
+  "environment": "Chrome headless, Apple Silicon macOS, own fresh browser context, reduced motion, weather off",
+  "sampleSeconds": 5,
+  "cpuSecondsDelta": 0.008307999999999538,
+  "approxCpuPercent": 0.16615999999999076,
+  "sumOwnedProcessRssKiB": 1397472,
+  "requestHosts": [
+    "ghostzy0.github.io"
+  ],
+  "checks": [
+    "docs desktop/mobile and metadata",
+    "app layout preset",
+    "real2second focus countdown/pause/reset",
+    "settings/about/back",
+    "quiet restore via Enter",
+    "390x844 app navigation"
+  ],
+  "errors": []
+}
