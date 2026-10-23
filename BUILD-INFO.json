@@ -1,0 +1,25 @@
+{
+  "product": "Standby Pro",
+  "version": "1.1.0-preview.1",
+  "source_commit": "756bcdc94280fedb93d3f8fe2fb9b4843e66e280",
+  "flutter": "3.41.9",
+  "framework_commit": "00b0c91f06209d9e4a41f71b7a512d6eb3b9c694",
+  "dart": "3.11.5",
+  "host": "macOS27.0.1 Apple Silicon; Xcode27.1",
+  "artifact": "Dart2JS browser app with bundled web engine and fonts; source archive",
+  "signing": "No Android/iOS binary or production signature",
+  "verification": [
+    "locked pub get",
+    "flutter analyze: no issues",
+    "flutter test:34 passed",
+    "flutter build web --release --base-href /standby-pro/demo/ --no-web-resources-cdn",
+    "Chrome headless app workflows and390x844 navigation; weather-off tested Latin UI requests only origin"
+  ],
+  "limits": [
+    "physical phones",
+    "native signing/update identity",
+    "TalkBack/VoiceOver",
+    "charging/lock-screen/battery/OLED",
+    "arbitrary font fallback paths"
+  ]
+}
