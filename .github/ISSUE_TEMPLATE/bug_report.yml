@@ -1,0 +1,27 @@
+name: Bug report
+description: Report a reproducible Standby Pro problem
+body:
+  - type: input
+    id: version
+    attributes:
+      label: App version or commit
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Device, OS and build type
+      description: Browser preview, debug APK, simulator, or signed physical build
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps, expected result and actual result
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public-safe evidence
+      description: Remove private events, tokens and device identifiers. Include text scaling, orientation and weather status where relevant.

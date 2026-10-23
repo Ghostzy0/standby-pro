@@ -1,0 +1,14 @@
+# Standby Pro
+
+> Independent open-source Flutter bedside clock by Ghostzy0. Original repository and history preserved. Version 1.1.0 preview adds layouts, local visual focus timer, clear sample/unavailable integrations, optional city weather and defensive local preferences. No production native binary, system StandBy integration or physical phone acceptance is claimed.
+
+- [Setup and platform limits](https://ghostzy0.github.io/standby-pro/guide.html)
+- [Privacy and data](https://ghostzy0.github.io/standby-pro/privacy.html)
+- [Source and current context](https://github.com/Ghostzy0/standby-pro)
+- [Versioned releases](https://github.com/Ghostzy0/standby-pro/releases)
+- [Historical baseline provenance](https://github.com/Ghostzy0/standby-pro-baseline)
+- [Device acceptance gaps](https://github.com/Ghostzy0/standby-pro/issues/4)
+
+AI setup: Clone Ghostzy0/standby-pro at the desired release tag. Read CONTEXT.md and release notes. Use Flutter 3.41.9/Dart3.11.5, run locked dependencies, analysis and tests. Do not substitute browser/widget evidence for Android/iPhone physical acceptance.
+
+This optional navigation file makes no claim about indexing, inclusion or search rankings.

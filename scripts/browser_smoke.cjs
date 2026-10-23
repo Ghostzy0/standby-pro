@@ -1,0 +1,67 @@
+// Optional macOS Chrome headless verifier. Uses an existing Playwright install; never downloads a browser.
+const path=require('path'); process.chdir(path.resolve(__dirname,'..'));
+const {chromium}=require('playwright');
+const fs=require('fs');
+(async()=>{
+ const browser=await chromium.launch({executablePath:process.env.STANDBY_CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--disable-gpu','--no-first-run']});
+ const errors=[]; const requests=[]; const {execFileSync}=require('child_process');
+ try{
+  const context=await browser.newContext({viewport:{width:1200,height:800},reducedMotion:'reduce'});
+  const page=await context.newPage(); page.on('pageerror',e=>errors.push(e.message)); page.on('request',r=>requests.push(r.url()));
+  const resp=await page.goto('http://127.0.0.1:8765/standby-pro/');
+  if(resp.status()!==200)throw Error('Docs did not return200');
+  await page.locator('h1').waitFor();
+  if(await page.title()!=='Standby Pro · Open-source bedside clock & focus timer')throw Error('Wrong title');
+  await page.screenshot({path:'docs/assets/website.png',fullPage:true});
+  await page.setViewportSize({width:390,height:844});
+  if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error('Docs horizontal overflow');
+  await page.screenshot({path:'docs/assets/website-mobile.png',fullPage:true});
+  await page.setViewportSize({width:1200,height:700});
+  const app=await page.goto('http://127.0.0.1:8765/standby-pro/demo/');
+  if(app.status()!==200)throw Error('App did not return200');
+  await page.locator('flutter-view').waitFor({timeout:30000});
+  const enable=page.locator('flt-semantics-placeholder');
+  if(await enable.count())await enable.evaluate(el=>el.click());
+  await page.waitForFunction(()=>document.querySelector('flt-semantics')?.textContent || document.querySelector('flt-semantics[aria-label]'),{timeout:15000});
+
+  await page.screenshot({path:'docs/assets/browser-display.png'});
+  await page.getByRole('tab',{name:'Layouts',exact:true}).click();
+  await page.getByText('Make room for rest.',{exact:true}).waitFor();
+  await page.getByRole('button',{name:/Just the time/}).click();
+  await page.getByRole('tab',{name:'Display',exact:true}).waitFor();
+  await page.getByRole('tab',{name:'Timer',exact:true}).click();
+  await page.getByRole('button',{name:'Start focus',exact:true}).click();
+  await page.getByText('Focus in progress',{exact:true}).waitFor();
+  await page.getByText('Time remaining 24:58',{exact:true}).waitFor({timeout:7000});
+  await page.getByRole('button',{name:'Pause timer',exact:true}).click();
+  await page.getByRole('button',{name:'Start focus',exact:true}).waitFor();
+  await page.screenshot({path:'docs/assets/browser-timer.png'});
+  await page.getByRole('button',{name:'Reset timer',exact:true}).click();
+  await page.getByText('Time remaining 25:00',{exact:true}).waitFor();
+  await page.getByRole('tab',{name:'Settings',exact:true}).click();
+  await page.getByText('A display that fits you.',{exact:true}).waitFor();
+  await page.getByRole('button',{name:'About and data status',exact:true}).click();
+  await page.getByText('About Standby Pro',{exact:true}).waitFor();
+  await page.getByRole('button',{name:'Back',exact:true}).click();
+  await page.getByRole('tab',{name:'Display',exact:true}).click();
+  await page.getByRole('button',{name:'Quiet display',exact:true}).click();
+  await page.getByRole('button',{name:'Show controls',exact:true}).waitFor();
+  await page.getByRole('button',{name:'Show controls',exact:true}).focus();
+  await page.keyboard.press('Enter');
+  await page.getByRole('tab',{name:'Display',exact:true}).waitFor();
+  await page.setViewportSize({width:390,height:844});
+  await page.getByRole('tab',{name:'Timer',exact:true}).click();
+  await page.getByRole('button',{name:'Start focus',exact:true}).waitFor();
+  await page.screenshot({path:'docs/assets/browser-mobile.png'});
+  await page.getByRole('tab',{name:'Display',exact:true}).click();
+  const session=await browser.newBrowserCDPSession();
+  await new Promise(r=>setTimeout(r,5000));
+  const a=await session.send('SystemInfo.getProcessInfo');await new Promise(r=>setTimeout(r,5000));
+  const b=await session.send('SystemInfo.getProcessInfo');
+  const cpuA=a.processInfo.reduce((n,p)=>n+p.cpuTime,0),cpuB=b.processInfo.reduce((n,p)=>n+p.cpuTime,0);
+  fs.writeFileSync('docs/evidence/browser-metrics.json',JSON.stringify({environment:'Chrome headless, Apple Silicon macOS, own fresh browser context, reduced motion, weather off',sampleSeconds:5,cpuSecondsDelta:cpuB-cpuA,approxCpuPercent:(cpuB-cpuA)/5*100,sumOwnedProcessRssKiB:execFileSync('/bin/ps',['-o','rss=','-p',b.processInfo.map(p=>p.id).join(',')],{encoding:'utf8'}).trim().split(/\s+/).reduce((n,s)=>n+Number(s),0),requestHosts:[...new Set(requests.map(u=>new URL(u).host))],checks:['docs desktop/mobile and metadata','app layout preset','real2second focus countdown/pause/reset','settings/about/back','quiet restore via Enter','390x844 app navigation'],errors},null,2));
+  if(requests.some(u=>new URL(u).host !== '127.0.0.1:8765'))throw Error('Unexpected external request with weather off: '+requests.filter(u=>new URL(u).host !== '127.0.0.1:8765').join(', '));
+  if(errors.length)throw Error(errors.join('; '));
+  console.log('BROWSER_FULL_SMOKE_PASS');
+ }finally{await browser.close();}
+})().catch(e=>{console.error(e);process.exit(1)});

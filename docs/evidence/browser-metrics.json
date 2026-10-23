@@ -1,0 +1,19 @@
+{
+  "environment": "Chrome headless, Apple Silicon macOS, own fresh browser context, reduced motion, weather off",
+  "sampleSeconds": 5,
+  "cpuSecondsDelta": 0.010793000000001385,
+  "approxCpuPercent": 0.21586000000002767,
+  "sumOwnedProcessRssKiB": 1409408,
+  "requestHosts": [
+    "127.0.0.1:8765"
+  ],
+  "checks": [
+    "docs desktop/mobile and metadata",
+    "app layout preset",
+    "real2second focus countdown/pause/reset",
+    "settings/about/back",
+    "quiet restore via Enter",
+    "390x844 app navigation"
+  ],
+  "errors": []
+}

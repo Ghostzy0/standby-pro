@@ -57,17 +57,17 @@ Downloading packages...
 Got dependencies!
 17 packages have newer versions incompatible with dependency constraints.
 Try `flutter pub outdated` for more information.
-00:00 +0: loading /Users/ghost/Documents/Codex/2026-10-23/standby-pro-upgrade/work/baseline/app/test/standby_widget_test.dart
-00:00 +0: /Users/ghost/Documents/Codex/2026-10-23/standby-pro-upgrade/work/baseline/app/test/standby_domain_test.dart: settings serialize all user-facing customization choices
-00:00 +1: /Users/ghost/Documents/Codex/2026-10-23/standby-pro-upgrade/work/baseline/app/test/standby_domain_test.dart: settings repository persists and restores settings
-00:00 +2: /Users/ghost/Documents/Codex/2026-10-23/standby-pro-upgrade/work/baseline/app/test/standby_domain_test.dart: clock cadence slows down when seconds are hidden or app is backgrounded
-00:00 +3: /Users/ghost/Documents/Codex/2026-10-23/standby-pro-upgrade/work/baseline/app/test/standby_domain_test.dart: burn-in protection produces bounded, repeatable OLED-safe offsets
-00:00 +4: /Users/ghost/Documents/Codex/2026-10-23/standby-pro-upgrade/work/baseline/app/test/standby_domain_test.dart: integration fallback snapshots are useful without phone permissions
-00:00 +5: /Users/ghost/Documents/Codex/2026-10-23/standby-pro-upgrade/work/baseline/app/test/standby_domain_test.dart: night mode can auto-tint only during bedside hours
-00:00 +6: /Users/ghost/Documents/Codex/2026-10-23/standby-pro-upgrade/work/baseline/app/test/standby_domain_test.dart: theme presets expose distinct visual identities
-00:00 +7: /Users/ghost/Documents/Codex/2026-10-23/standby-pro-upgrade/work/baseline/app/test/standby_widget_test.dart: renders the StandBy screen with duo widgets and customization
-00:00 +8: /Users/ghost/Documents/Codex/2026-10-23/standby-pro-upgrade/work/baseline/app/test/standby_widget_test.dart: single focus mode shows the configured clock face
-00:00 +9: /Users/ghost/Documents/Codex/2026-10-23/standby-pro-upgrade/work/baseline/app/test/standby_widget_test.dart: customization sheet exposes widget and clock controls
+00:00 +0: loading <WORKSPACE>/work/baseline/app/test/standby_widget_test.dart
+00:00 +0: <WORKSPACE>/work/baseline/app/test/standby_domain_test.dart: settings serialize all user-facing customization choices
+00:00 +1: <WORKSPACE>/work/baseline/app/test/standby_domain_test.dart: settings repository persists and restores settings
+00:00 +2: <WORKSPACE>/work/baseline/app/test/standby_domain_test.dart: clock cadence slows down when seconds are hidden or app is backgrounded
+00:00 +3: <WORKSPACE>/work/baseline/app/test/standby_domain_test.dart: burn-in protection produces bounded, repeatable OLED-safe offsets
+00:00 +4: <WORKSPACE>/work/baseline/app/test/standby_domain_test.dart: integration fallback snapshots are useful without phone permissions
+00:00 +5: <WORKSPACE>/work/baseline/app/test/standby_domain_test.dart: night mode can auto-tint only during bedside hours
+00:00 +6: <WORKSPACE>/work/baseline/app/test/standby_domain_test.dart: theme presets expose distinct visual identities
+00:00 +7: <WORKSPACE>/work/baseline/app/test/standby_widget_test.dart: renders the StandBy screen with duo widgets and customization
+00:00 +8: <WORKSPACE>/work/baseline/app/test/standby_widget_test.dart: single focus mode shows the configured clock face
+00:00 +9: <WORKSPACE>/work/baseline/app/test/standby_widget_test.dart: customization sheet exposes widget and clock controls
 00:00 +10: All tests passed!
 Resolving dependencies...
 Downloading packages...
@@ -91,5 +91,5 @@ Downloading packages...
 Got dependencies!
 17 packages have newer versions incompatible with dependency constraints.
 Try `flutter pub outdated` for more information.
-Analyzing app...                                                
+Analyzing app...
 No issues found! (ran in 7.7s)

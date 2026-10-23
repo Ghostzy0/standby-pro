@@ -1,28 +1,9 @@
-# Project Memory: Standby Mode App
+# Standby Pro project state
 
-## State Matrix
-- **Project:** Standby Mode App / Standby Pro
-- **Status:** Flutter core built and locally verified
-- **Current Phase:** Device validation
-- **Next Action:** Test `app/build/app/outputs/flutter-apk/app-debug.apk` on a real Android phone and tune the standby UX from device feedback.
-- **Blockers:** iOS device build/signing requires macOS and Xcode. Android device UX still needs hands-on testing.
-- **Last Verification:** 2026-05-13: `flutter test` and `flutter analyze` passed from `app`.
-- **Git Policy:** Child git repo with GitHub remote. Safe autonomous checkpoint allowed only after tests, diff review, secret scan, explicit staging, and version/memory update.
-- **Version:** 1.00
+Updated23 October2026. Current active source is Flutter/Dart with original clock faces/themes, Display/Layouts/Timer/Settings/About, optional city weather and defensive local settings. This repository retains the original history and community. Historical baseline source is pinned at9ce5e167 / v1.0.0-baseline.1; clean separate baseline repository has per-file provenance and a labelled packaging correction.
 
-## Key Decisions
-- Tech Stack: Flutter + Dart with generated Android/iOS projects.
-- Android Package: `com.ytchannel.standbypro`.
-- Core Engine: Adaptive clock cadence, OLED burn-in offsets, night mode tint policy, native keep-awake/brightness/media channel.
-- Integrations: Calendar/weather/music have useful fallback states; Android media commands use a native MethodChannel.
-- Product Direction: Inspired original StandBy experience, not a literal clone; no ads or in-app purchases in the first build.
+Recorded toolchain Flutter3.41.9/Dart3.11.5. Improved34 tests, analysis and web release build pass in a fresh remote clone. Browser and synthetic widget evidence are in docs/evidence; three assisted audits are in docs/audits. Read CONTEXT.md, PLAN.md and versioned release notes for exact acceptance limits.
 
-## Do Not Touch / User Constraints
-- Do not add ads or in-app purchases to the first build.
-- Do not claim iOS device readiness until built/signed on macOS with Xcode.
-- Do not claim Android UX is final until tested on a physical phone.
+No production signed APK/IPA, physical phone acceptance, real calendar/media integration, system StandBy/WidgetKit, background alarm, battery-life or burn-in guarantee. No ads/IAP/accounts/analytics. Original source MIT; bundled Roboto Apache2; other package licences in THIRD-PARTY-NOTICES.txt. Open-Meteo data CC BY4.0 and free service noncommercial.
 
-## Recent Actions (Max 3)
-1. Standardized memory for Claude-centric operating policy and added project versioning.
-2. Verified `flutter test` and `flutter analyze` on 2026-05-13.
-3. Rebuilt the broken Capacitor/React app as a clean Flutter project in `app`.
+Next action: physical Android validation with controlled signing identity, then iPhone/signing and assistive testing. Preserve the v1 preference key and package identity; no silent paid API or sensitive permission fallback.

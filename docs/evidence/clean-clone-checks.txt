@@ -1,0 +1,134 @@
+ACQUIRED heavy-1.lock
+Resolving dependencies...
+Downloading packages...
+  clock 1.1.2 (1.1.3 available)
+  cupertino_icons 1.0.9 (2.0.0 available)
+  intl 0.20.2 (0.20.3 available)
+  matcher 0.12.19 (0.12.20 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  meta 1.17.0 (1.19.0 available)
+  path_provider_linux 2.2.1 (2.2.2 available)
+  path_provider_platform_interface 2.1.2 (2.1.3 available)
+  platform 3.1.6 (3.2.0 available)
+  shared_preferences 2.5.5 (2.5.6 available)
+  shared_preferences_android 2.4.23 (2.5.3 available)
+  shared_preferences_foundation 2.5.6 (2.6.0 available)
+  stack_trace 1.12.1 (1.12.2 available)
+  test_api 0.7.10 (0.7.15 available)
+  vector_math 2.2.0 (2.4.3 available)
+  vm_service 15.2.0 (15.4.0 available)
+  web 1.1.1 (1.1.2 available)
+Got dependencies!
+17 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Resolving dependencies...
+Downloading packages...
+  clock 1.1.2 (1.1.3 available)
+  cupertino_icons 1.0.9 (2.0.0 available)
+  intl 0.20.2 (0.20.3 available)
+  matcher 0.12.19 (0.12.20 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  meta 1.17.0 (1.19.0 available)
+  path_provider_linux 2.2.1 (2.2.2 available)
+  path_provider_platform_interface 2.1.2 (2.1.3 available)
+  platform 3.1.6 (3.2.0 available)
+  shared_preferences 2.5.5 (2.5.6 available)
+  shared_preferences_android 2.4.23 (2.5.3 available)
+  shared_preferences_foundation 2.5.6 (2.6.0 available)
+  stack_trace 1.12.1 (1.12.2 available)
+  test_api 0.7.10 (0.7.15 available)
+  vector_math 2.2.0 (2.4.3 available)
+  vm_service 15.2.0 (15.4.0 available)
+  web 1.1.1 (1.1.2 available)
+Got dependencies!
+17 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Analyzing app...
+No issues found! (ran in 1.5s)
+Resolving dependencies...
+Downloading packages...
+  clock 1.1.2 (1.1.3 available)
+  cupertino_icons 1.0.9 (2.0.0 available)
+  intl 0.20.2 (0.20.3 available)
+  matcher 0.12.19 (0.12.20 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  meta 1.17.0 (1.19.0 available)
+  path_provider_linux 2.2.1 (2.2.2 available)
+  path_provider_platform_interface 2.1.2 (2.1.3 available)
+  platform 3.1.6 (3.2.0 available)
+  shared_preferences 2.5.5 (2.5.6 available)
+  shared_preferences_android 2.4.23 (2.5.3 available)
+  shared_preferences_foundation 2.5.6 (2.6.0 available)
+  stack_trace 1.12.1 (1.12.2 available)
+  test_api 0.7.10 (0.7.15 available)
+  vector_math 2.2.0 (2.4.3 available)
+  vm_service 15.2.0 (15.4.0 available)
+  web 1.1.1 (1.1.2 available)
+Got dependencies!
+17 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading <WORKSPACE>/work/final-clean/app/test/weather_service_test.dart
+00:00 +0: <WORKSPACE>/work/final-clean/app/test/weather_service_test.dart: parses current and real daily temperatures for a supported city
+00:00 +1: <WORKSPACE>/work/final-clean/app/test/weather_service_test.dart: omits malformed daily extremes instead of inventing values
+00:00 +2: <WORKSPACE>/work/final-clean/app/test/weather_service_test.dart: rejects missing or invalid current weather fields
+00:00 +3: <WORKSPACE>/work/final-clean/app/test/standby_controller_test.dart: controller serializes settings through the injected repository
+00:00 +4: <WORKSPACE>/work/final-clean/app/test/standby_controller_test.dart: controller serializes settings through the injected repository
+00:00 +5: <WORKSPACE>/work/final-clean/app/test/standby_controller_test.dart: controller serializes settings through the injected repository
+00:00 +6: <WORKSPACE>/work/final-clean/app/test/standby_controller_test.dart: controller serializes settings through the injected repository
+00:00 +7: <WORKSPACE>/work/final-clean/app/test/standby_controller_test.dart: persistence failure is exposed without reverting the current setting
+00:00 +8: <WORKSPACE>/work/final-clean/app/test/standby_controller_test.dart: newer city response wins when weather requests complete out of order
+00:00 +9: <WORKSPACE>/work/final-clean/app/test/standby_controller_test.dart: disabled weather never starts a network request
+00:00 +10: <WORKSPACE>/work/final-clean/app/test/ui_risk_test.dart: navigation and content fit 320.0x568.0
+00:00 +11: <WORKSPACE>/work/final-clean/app/test/ui_risk_test.dart: navigation and content fit 320.0x568.0
+00:00 +12: <WORKSPACE>/work/final-clean/app/test/ui_risk_test.dart: navigation and content fit 320.0x568.0
+00:00 +13: <WORKSPACE>/work/final-clean/app/test/ui_risk_test.dart: navigation and content fit 320.0x568.0
+00:00 +14: <WORKSPACE>/work/final-clean/app/test/ui_risk_test.dart: navigation and content fit 320.0x568.0
+00:00 +15: <WORKSPACE>/work/final-clean/app/test/ui_risk_test.dart: navigation and content fit 320.0x568.0
+00:00 +16: <WORKSPACE>/work/final-clean/app/test/ui_risk_test.dart: navigation and content fit 320.0x568.0
+00:00 +17: <WORKSPACE>/work/final-clean/app/test/ui_risk_test.dart: navigation and content fit 320.0x568.0
+00:00 +18: <WORKSPACE>/work/final-clean/app/test/ui_risk_test.dart: navigation and content fit 320.0x568.0
+00:00 +19: <WORKSPACE>/work/final-clean/app/test/ui_risk_test.dart: navigation and content fit 320.0x568.0
+00:00 +20: <WORKSPACE>/work/final-clean/app/test/ui_risk_test.dart: navigation and content fit 320.0x568.0
+00:00 +21: <WORKSPACE>/work/final-clean/app/test/ui_risk_test.dart: navigation and content fit 320.0x568.0
+00:00 +22: <WORKSPACE>/work/final-clean/app/test/ui_risk_test.dart: navigation and content fit 320.0x568.0
+00:00 +23: <WORKSPACE>/work/final-clean/app/test/standby_widget_test.dart: layout presets apply and return to the display
+00:00 +24: <WORKSPACE>/work/final-clean/app/test/ui_risk_test.dart: navigation and content fit 844.0x390.0
+00:00 +25: <WORKSPACE>/work/final-clean/app/test/standby_widget_test.dart: settings flow exposes clock, layout, comfort and data status
+00:00 +26: <WORKSPACE>/work/final-clean/app/test/ui_risk_test.dart: settings remains usable at 2x system text scale
+00:00 +27: <WORKSPACE>/work/final-clean/app/test/standby_widget_test.dart: settings clock-face choice updates the display
+00:01 +28: <WORKSPACE>/work/final-clean/app/test/standby_widget_test.dart: settings clock-face choice updates the display
+00:01 +29: <WORKSPACE>/work/final-clean/app/test/standby_widget_test.dart: about flow states data and platform limits
+00:01 +30: <WORKSPACE>/work/final-clean/app/test/standby_widget_test.dart: quiet display hides chrome and restores its controls
+00:01 +31: <WORKSPACE>/work/final-clean/app/test/standby_widget_test.dart: sample calendar and unavailable audio are labelled as such
+00:01 +32: <WORKSPACE>/work/final-clean/app/test/standby_widget_test.dart: all four clock faces render and expose a time semantic
+00:01 +33: <WORKSPACE>/work/final-clean/app/test/standby_widget_test.dart: timer can start, pause without advancing, and reset
+00:01 +34: All tests passed!
+Resolving dependencies...
+Downloading packages...
+  clock 1.1.2 (1.1.3 available)
+  cupertino_icons 1.0.9 (2.0.0 available)
+  intl 0.20.2 (0.20.3 available)
+  matcher 0.12.19 (0.12.20 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  meta 1.17.0 (1.19.0 available)
+  path_provider_linux 2.2.1 (2.2.2 available)
+  path_provider_platform_interface 2.1.2 (2.1.3 available)
+  platform 3.1.6 (3.2.0 available)
+  shared_preferences 2.5.5 (2.5.6 available)
+  shared_preferences_android 2.4.23 (2.5.3 available)
+  shared_preferences_foundation 2.5.6 (2.6.0 available)
+  stack_trace 1.12.1 (1.12.2 available)
+  test_api 0.7.10 (0.7.15 available)
+  vector_math 2.2.0 (2.4.3 available)
+  vm_service 15.2.0 (15.4.0 available)
+  web 1.1.1 (1.1.2 available)
+Got dependencies!
+17 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Compiling lib/main.dart for the Web...
+Wasm dry run succeeded. Consider building and testing your application with the `--wasm` flag. See docs for more info: https://docs.flutter.dev/platform-integration/web/wasm
+Use --no-wasm-dry-run to disable these warnings.
+Font asset "CupertinoIcons.ttf" was tree-shaken, reducing it from 257628 to 1472 bytes (99.4% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.
+Font asset "MaterialIcons-Regular.otf" was tree-shaken, reducing it from 1645184 to 10032 bytes (99.4% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.
+Compiling lib/main.dart for the Web...                             14.1s
+✓ Built build/web
