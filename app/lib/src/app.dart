@@ -12,6 +12,7 @@ class StandbyProApp extends StatelessWidget {
     themeMode: ThemeMode.dark,
     darkTheme: ThemeData(
       useMaterial3: true,
+      fontFamily: 'Roboto',
       brightness: Brightness.dark,
       scaffoldBackgroundColor: const Color(0xFF03060B),
       colorScheme: const ColorScheme.dark(
