@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-24",
+  "scope": "four exclusive temporary verification copies only; originals/source/SDK/SPM bundle/raw logs preserved",
+  "public_release": "https://github.com/Ghostzy0/standby-pro/releases/tag/v1.1.0-preview.2",
+  "private_checkpoint": "selected31-file evidence checkpoint verified separately; no full workspace claim",
+  "removals": [
+    {
+      "path": "work/recovered-preview2",
+      "reason": "owned temporary download/extraction copy; every file compared to retained original after verified remote recovery",
+      "files": 8,
+      "logical_bytes": 15675561,
+      "allocated_file_bytes": 15695872,
+      "utc": "2026-10-24T19:09:57.750130+00:00",
+      "absent_after_removal": true
+    },
+    {
+      "path": "work/recovered-private-backup24-final",
+      "reason": "owned temporary download/extraction copy; every file compared to retained original after verified remote recovery",
+      "files": 6,
+      "logical_bytes": 216812,
+      "allocated_file_bytes": 233472,
+      "utc": "2026-10-24T19:09:57.751268+00:00",
+      "absent_after_removal": true
+    },
+    {
+      "path": "work/recovered-private-backup24",
+      "reason": "owned temporary download/extraction copy; every file compared to retained original after verified remote recovery",
+      "files": 4,
+      "logical_bytes": 215955,
+      "allocated_file_bytes": 225280,
+      "utc": "2026-10-24T19:09:57.751874+00:00",
+      "absent_after_removal": true
+    },
+    {
+      "path": "work/restored-private-backup24",
+      "reason": "owned temporary download/extraction copy; every file compared to retained original after verified remote recovery",
+      "files": 31,
+      "logical_bytes": 320873,
+      "allocated_file_bytes": 389120,
+      "utc": "2026-10-24T19:09:57.752848+00:00",
+      "absent_after_removal": true
+    }
+  ],
+  "logical_bytes_removed": 16429201,
+  "allocated_file_bytes_removed": 16543744,
+  "physical_free_space_delta": "not attributed; APFS snapshots/clones and concurrent peer work can affect actual free space"
+}
