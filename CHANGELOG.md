@@ -1,5 +1,12 @@
 # Change and patch log
 
+## v1.1.0-preview.2 — licence packaging and build verification,24 October2026
+
+- Bundles the app's full MIT notice and exposes it alongside Roboto in the existing open-source licences screen; package build advances to1.1.0+3.
+- Adds regression coverage for keyboard Quiet display recovery, clock semantics, reduced motion, large-text landscape settings, method-channel errors and bundled licence registration.
+- Adds pinned Flutter CI with manual Android debug/iOS simulator compilation. Official checkout v6 uses Node24 without the previous runner deprecation warning.
+- Records independently reviewed native build evidence and its limits. No native production binary, phone/accessibility/signing/update or power/display acceptance is claimed. Original clock/timer/weather behavior and the historical baseline remain unchanged.
+
 ## v1.0.0-baseline.1 — archival source, 23 October 2026
 
 Exact historical source `9ce5e1676a1eae2681037d75eb354cd76addf207`, root VERSION 1.00 / app 1.0.0+1. No source patch or redesign. No production binary promised. Current verification and known shortcomings are documented separately; original May verification is historical only.

@@ -27,12 +27,12 @@ This is a **source and browser-preview release**. No production signed APK/IPA i
 
 ## Build and verify
 
-Recorded toolchain: Flutter **3.41.9**, Dart **3.11.5**, Apple Silicon macOS with Xcode27.1.
+Recorded toolchain: Flutter **3.41.9**, Dart **3.11.5**. [Dated build evidence](docs/evidence/native-hosted-builds-2026-10-24.md) records the tested hosts and native configurations. Preview.2 bundles the full app MIT notice in the licence screen; source CI passes44 tests, analysis and web compilation.
 
 ```sh
 git clone https://github.com/Ghostzy0/standby-pro.git
 cd standby-pro
-git checkout v1.1.0-preview.1
+git checkout v1.1.0-preview.2
 cd app
 flutter pub get --enforce-lockfile
 flutter analyze
@@ -46,7 +46,7 @@ The [Flutter checks](https://github.com/Ghostzy0/standby-pro/actions/workflows/f
 
 Preferences retain their v1 key; invalid fields use safe defaults. Weather remains disabled when migrating old settings. Removing the app/site storage clears local preferences. A signing-identity change can require reinstalling and losing settings. Baseline and improved builds retain the same package ID and are alternative builds of one lineage.
 
-AI setup prompt: “Clone Ghostzy0/standby-pro at v1.1.0-preview.1. Read CONTEXT.md and release notes, use Flutter3.41.9, run locked dependencies, analysis and tests. Report native signing/device gaps before building.”
+AI setup prompt: “Clone Ghostzy0/standby-pro at v1.1.0-preview.2. Read CONTEXT.md and release notes, use Flutter3.41.9, run locked dependencies, analysis and tests. Report native signing/device gaps before building.”
 
 ## Preserved baseline and provenance
 
