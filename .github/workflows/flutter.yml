@@ -1,0 +1,87 @@
+name: Flutter checks
+
+on:
+  pull_request:
+    paths:
+      - 'app/**'
+      - '.github/workflows/flutter.yml'
+  push:
+    branches: [master]
+    paths:
+      - 'app/**'
+      - '.github/workflows/flutter.yml'
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Check source, or also compile an unsigned native development target'
+        type: choice
+        default: source
+        options: [source, android-debug, ios-simulator]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: flutter-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    # Standard hosted runners only. This public repository uses no paid runner,
+    # Actions cache, uploaded build artifact, deployment or signing credential.
+    runs-on: ${{ inputs.target == 'ios-simulator' && 'macos-15' || 'ubuntu-24.04' }}
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - name: Check out app
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Check out recorded Flutter 3.41.9
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: flutter/flutter
+          ref: 00b0c91f06209d9e4a41f71b7a512d6eb3b9c694
+          path: .ci/flutter
+          persist-credentials: false
+      - name: Configure toolchain
+        env:
+          JOB_TARGET: ${{ inputs.target }}
+        run: |
+          echo "$GITHUB_WORKSPACE/.ci/flutter/bin" >> "$GITHUB_PATH"
+          if [ "$JOB_TARGET" = android-debug ]; then
+            echo "JAVA_HOME=$JAVA_HOME_17_X64" >> "$GITHUB_ENV"
+            echo "$JAVA_HOME_17_X64/bin" >> "$GITHUB_PATH"
+          fi
+      - name: Record SDK and resolve locked dependencies
+        run: |
+          flutter --version
+          flutter pub get --enforce-lockfile
+      - name: Analyze
+        run: flutter analyze --no-pub
+      - name: Test
+        run: flutter test --no-pub
+      - name: Compile browser preview
+        if: inputs.target != 'android-debug' && inputs.target != 'ios-simulator'
+        run: flutter build web --release --no-pub --base-href /standby-pro/demo/ --no-web-resources-cdn
+      - name: Compile Android debug APK
+        if: inputs.target == 'android-debug'
+        run: |
+          java -version
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --install \
+            'platforms;android-36' 'build-tools;36.0.0' 'ndk;28.2.13676358'
+          flutter build apk --debug --no-pub
+          sha256sum build/app/outputs/flutter-apk/app-debug.apk
+      - name: Compile iOS simulator app
+        if: inputs.target == 'ios-simulator'
+        run: |
+          xcodebuild -version
+          pod --version
+          flutter build ios --simulator --debug --no-pub
+      - name: Evidence boundary
+        if: always()
+        run: |
+          echo 'Compilation and source tests do not establish device, accessibility, signing/update, battery, thermal or OLED acceptance.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Native jobs build development targets only; no store-ready binary is published.' >> "$GITHUB_STEP_SUMMARY"
