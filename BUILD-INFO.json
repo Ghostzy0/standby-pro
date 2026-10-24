@@ -1,25 +1,27 @@
 {
-  "product": "Standby Pro",
-  "version": "1.1.0-preview.1",
-  "source_commit": "756bcdc94280fedb93d3f8fe2fb9b4843e66e280",
+  "release": "v1.1.0-preview.2",
+  "source": "1a21922f5d49790257c01e2106104f4acdd155f3",
+  "app_version": "1.1.0+3",
   "flutter": "3.41.9",
-  "framework_commit": "00b0c91f06209d9e4a41f71b7a512d6eb3b9c694",
   "dart": "3.11.5",
-  "host": "macOS27.0.1 Apple Silicon; Xcode27.1",
-  "artifact": "Dart2JS browser app with bundled web engine and fonts; source archive",
-  "signing": "No Android/iOS binary or production signature",
-  "verification": [
-    "locked pub get",
-    "flutter analyze: no issues",
-    "flutter test:34 passed",
-    "flutter build web --release --base-href /standby-pro/demo/ --no-web-resources-cdn",
-    "Chrome headless app workflows and390x844 navigation; weather-off tested Latin UI requests only origin"
-  ],
-  "limits": [
-    "physical phones",
-    "native signing/update identity",
-    "TalkBack/VoiceOver",
-    "charging/lock-screen/battery/OLED",
-    "arbitrary font fallback paths"
-  ]
+  "flutter_revision": "00b0c91f06209d9e4a41f71b7a512d6eb3b9c694",
+  "scope": "source and compiled browser preview; native binaries not distributed",
+  "source_files": 162,
+  "web_files": 37,
+  "checks": {
+    "locked_dependencies": true,
+    "source_ci_tests": 44,
+    "source_ci_analysis": "passed",
+    "clean_clone_web_compile": "passed",
+    "compiled_web_license_route": "passed"
+  },
+  "native_compile_ci": {
+    "source": "1a21922f5d49790257c01e2106104f4acdd155f3",
+    "android_run": "40120081277",
+    "ios_simulator_run": "40120575397",
+    "tests_each": 44,
+    "result": "passed",
+    "binaries_retained": false
+  },
+  "native_acceptance": "device/signing/accessibility/power gates remain open"
 }
