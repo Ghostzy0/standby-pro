@@ -50,6 +50,10 @@ jobs:
         env:
           JOB_TARGET: ${{ inputs.target }}
         run: |
+          # Flutter computes its SDK version from tags. A shallow SHA checkout
+          # alone can report an unknown version and reject locked packages.
+          git -C ../.ci/flutter fetch --depth=1 origin refs/tags/3.41.9:refs/tags/3.41.9
+          test "$(git -C ../.ci/flutter rev-parse '3.41.9^{commit}')" = 00b0c91f06209d9e4a41f71b7a512d6eb3b9c694
           echo "$GITHUB_WORKSPACE/.ci/flutter/bin" >> "$GITHUB_PATH"
           if [ "$JOB_TARGET" = android-debug ]; then
             echo "JAVA_HOME=$JAVA_HOME_17_X64" >> "$GITHUB_ENV"
