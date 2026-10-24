@@ -294,9 +294,12 @@ Future<void> _tabUntilFocused(WidgetTester tester, Finder target) async {
   for (var i = 0; i < 40; i++) {
     await tester.sendKeyEvent(LogicalKeyboardKey.tab);
     await tester.pump();
-    if (tester.getSemantics(target).getSemanticsData().hasFlag(
-      SemanticsFlag.isFocused,
-    )) {
+    if (tester
+            .getSemantics(target)
+            .getSemanticsData()
+            .flagsCollection
+            .isFocused ==
+        Tristate.isTrue) {
       return;
     }
   }
