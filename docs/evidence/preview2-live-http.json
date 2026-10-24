@@ -1,0 +1,26 @@
+{
+  "": {
+    "status": 200,
+    "sha256": "7956705f31bab0ff0d18c98c280ac852fdc5f28b4ccad7987b8ddd89d9f2bee5"
+  },
+  "guide.html": {
+    "status": 200,
+    "sha256": "74c43ac655435bb4472e67d48aa06e6b69de6fbe5b2b0a0b3bfd6e71802e4646"
+  },
+  "privacy.html": {
+    "status": 200,
+    "sha256": "0fd1f440c6560e4a35ed08bc917d5347079cf73145089365f2eafb0a572f0bd5"
+  },
+  "demo/": {
+    "status": 200,
+    "sha256": "a4e71d1925c8cf47adf36ca4def0cd1e8bdcce6f97d4562f2d371e9e7309fa30"
+  },
+  "BUILD-INFO.json": {
+    "status": 200,
+    "sha256": "2c3601a06a1e15ff2a96346ad0c1e56509b4da2f80449d8d5b51c100e3e7681d"
+  },
+  "demo/assets/assets/licenses/standby-pro-MIT.txt": {
+    "status": 200,
+    "sha256": "3bedf0f7ad7c9ad5ec9d320457a72a065fff9749b879b9c30e067ce4fb24841d"
+  }
+}

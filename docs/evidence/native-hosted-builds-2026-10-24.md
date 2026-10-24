@@ -1,5 +1,16 @@
 # Native compilation — 24 October 2026
 
+## Notice-fixed final source
+
+The final app1.1.0+3 source, master `1a21922f5d49790257c01e2106104f4acdd155f3`, compiled again after the MIT notice fix and Node24 checkout update:
+
+- [Android run40120081277](https://github.com/Ghostzy0/standby-pro/actions/runs/40120081277): locked dependencies, clean analysis, all44 tests and debug APK compilation passed. Build-time APK SHA256 `f41058a82c82b376a3efb156ae15cce2d13907de005634be5e8f8dc0aa5ca68b`.
+- [iOS simulator run40120575397](https://github.com/Ghostzy0/standby-pro/actions/runs/40120575397): locked dependencies, clean analysis, all44 tests, CocoaPods1.17.0 and Xcode16.4 compilation passed; `Runner.app` was produced.
+
+The parent verified native build lines in the full raw log archives. These outputs were also disposable, uninstalled CI binaries with no download/distribution or signing acceptance. The checksums are build observations, not recoverable release assets. No iOS bundle checksum was captured. The local arm64/minimum-iOS15 SPM experiment is a different configuration and is described separately.
+
+## Initial native compilation before the notice fix
+
 Both native project targets compiled from unchanged master `4c74a64417a61ff65ccb3e7f0d7973ce99329d48`, using pinned Flutter3.41.9/Dart3.11.5. This is compilation evidence, with no device installation or production signing acceptance.
 
 | Target | Configuration | Observed result |

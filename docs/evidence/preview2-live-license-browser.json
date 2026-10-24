@@ -1,0 +1,13 @@
+{
+  "source": "1a21922f5d49790257c01e2106104f4acdd155f3",
+  "scope": "Chrome headless live HTTPS web; weather off; bundled app MIT licence route",
+  "checks": [
+    "About to Open-source licences",
+    "Standby Pro package entry",
+    "MIT text and exact copyright visible"
+  ],
+  "pageErrors": [],
+  "requestHosts": [
+    "ghostzy0.github.io"
+  ]
+}
