@@ -42,6 +42,8 @@ flutter build web --release --base-href /standby-pro/demo/ --no-web-resources-cd
 
 For local serving, keep that base path or rebuild with `--base-href /`. Android additionally needs JDK17 and a compatible Android SDK/Gradle; configure release signing outside Git. The improved release configuration no longer falls back to debug signing. iOS needs macOS/Xcode/CocoaPods and signing for a physical phone. See [setup, installation, update and uninstall](https://ghostzy0.github.io/standby-pro/guide.html) and versioned [release notes](docs/releases/).
 
+The [Flutter checks](https://github.com/Ghostzy0/standby-pro/actions/workflows/flutter.yml) workflow runs locked dependency resolution, analysis, tests and web compilation when app code changes. Maintainers can use **Run workflow** with `android-debug` or `ios-simulator` to check native compilation on a standard GitHub-hosted runner. These jobs publish no binary and establish no physical-device, accessibility or production-signing acceptance. The versioned preview above remains the recorded release.
+
 Preferences retain their v1 key; invalid fields use safe defaults. Weather remains disabled when migrating old settings. Removing the app/site storage clears local preferences. A signing-identity change can require reinstalling and losing settings. Baseline and improved builds retain the same package ID and are alternative builds of one lineage.
 
 AI setup prompt: “Clone Ghostzy0/standby-pro at v1.1.0-preview.1. Read CONTEXT.md and release notes, use Flutter3.41.9, run locked dependencies, analysis and tests. Report native signing/device gaps before building.”
