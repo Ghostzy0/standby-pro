@@ -1,8 +1,8 @@
 # Change and patch log
 
-## Unreleased — timer pause feedback, 25 October 2026
+## v1.1.0-preview.3 — timer pause feedback, 25 October 2026
 
-- A paused session now says Paused and offers Resume focus. Reset, choosing a fresh duration and completion keep distinct ready/complete states. The existing injected-clock regression covers pause hold, resume, reset and completion; total test count stays44. App build advances to1.1.0+4 for validation.
+- A paused session now says Paused and offers Resume focus. Reset, choosing a fresh duration and completion keep distinct ready/complete states. The existing injected-clock regression covers pause hold, resume, reset and completion; total test count stays44. App build advances to1.1.0+4. Source CI passes44 tests, analysis and web compilation; a clean compiled-browser run verifies the corrected pause/resume/reset feedback. Native simulator validation of the fixed package remains pending and is recorded separately.
 
 ## v1.1.0-preview.2 — licence packaging and build verification,24 October2026
 

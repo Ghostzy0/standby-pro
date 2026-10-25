@@ -1,0 +1,15 @@
+{
+  "source": "8ce8581c26e6d4ea68a38d6509eb835f8858ecfe",
+  "scope": "Chrome headless compiled web;390x844;weather off;timer pause/resume/reset feedback",
+  "checks": [
+    "five-minute start and actual wait",
+    "Paused and Resume focus visible",
+    "Ready absent while paused",
+    "resume returns Focus in progress",
+    "reset returns Ready and Start focus"
+  ],
+  "pageErrors": [],
+  "requestHosts": [
+    "127.0.0.1:54868"
+  ]
+}
