@@ -290,14 +290,47 @@ void main() {
         )
         .data!;
     expect(paused, isNot('25:00'));
+    expect(find.text('Paused'), findsOneWidget);
+    expect(find.text('Resume focus'), findsOneWidget);
+    expect(find.text('Ready when you are'), findsNothing);
 
     await tester.pump(const Duration(seconds: 5));
     expect(find.text(paused), findsOneWidget);
+    expect(find.text('Paused'), findsOneWidget);
+    await tester.tap(find.text('Resume focus'));
+    timerNow = timerNow.add(const Duration(seconds: 2));
+    await tester.pump(const Duration(seconds: 2));
+    await tester.tap(find.text('Pause timer'));
+    await tester.pump();
+    final resumedAndPaused = tester
+        .widget<Text>(
+          find.byWidgetPredicate(
+            (widget) =>
+                widget is Text &&
+                RegExp(r'^\d{2}:\d{2}$').hasMatch(widget.data ?? ''),
+          ),
+        )
+        .data!;
+    expect(resumedAndPaused, isNot(paused));
+    expect(find.text('Paused'), findsOneWidget);
+
     await _scrollTo(tester, find.text('Reset timer'), timerScroll);
     await tester.tap(find.text('Reset timer'));
     await tester.pumpAndSettle();
     expect(find.text('25:00'), findsOneWidget);
     expect(find.text('Ready when you are'), findsOneWidget);
+
+    await _scrollTo(tester, find.text('5 min'), timerScroll);
+    await tester.tap(find.text('5 min'));
+    await tester.pumpAndSettle();
+    expect(find.text('05:00'), findsOneWidget);
+    expect(find.text('Ready when you are'), findsOneWidget);
+    await _scrollTo(tester, find.text('Start focus'), timerScroll);
+    await tester.tap(find.text('Start focus'));
+    timerNow = timerNow.add(const Duration(minutes: 6));
+    await tester.pump(const Duration(seconds: 1));
+    expect(find.text('Session complete. Take a breath.'), findsOneWidget);
+    expect(find.text('Start focus'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 }
