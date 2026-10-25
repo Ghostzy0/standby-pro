@@ -26964,8 +26964,8 @@ DJ:function DJ(a,b){var _=this
 _.d=a
 _.e=b
 _.r=_.f=null
-_.w=!1
-_.x=!0
+_.x=_.w=!1
+_.y=!0
 _.c=_.a=null},
 al1:function al1(a,b){this.a=a
 this.b=b},
@@ -89372,7 +89372,7 @@ if(r==null)return
 s.ag(new A.al1(s,r.eF(s.Q6())))},
 Rb(){var s=this,r=s.r
 if(r!=null)r.aV()
-if(s.f!=null&&s.x)s.r=A.awh(B.eG,new A.akZ(s))},
+if(s.f!=null&&s.y)s.r=A.awh(B.eG,new A.akZ(s))},
 ah9(){var s,r=this
 if(r.f!=null){r.FY()
 r.ag(new A.al_(r))
@@ -89380,7 +89380,7 @@ s=r.r
 if(s!=null)s.aV()}else{r.ag(new A.al0(r))
 r.Rb()}},
 mB(a){var s=a===B.bz
-this.x=s
+this.y=s
 if(s)this.FY()
 this.Rb()},
 l(){$.X.hN(this)
@@ -89394,13 +89394,17 @@ o=B.e.dh(l.e.a,6e7)
 n=l.f!=null?k:new A.al4(l,q)
 g.push(new A.IA(p,n,o===q,k))}g=A.ea(A.aCs(B.e8,g,12,12),k,k)
 s=A.bB(k,k,A.avb(A.bi(i,k,k,k,B.UO,k,k),B.mE),!1,k,!0,k,!1,k,k,k,k,k,"Time remaining "+i,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,k,B.z,k)
-if(l.w)p="Session complete. Take a breath."
-else p=l.f!=null?"Focus in progress":"Ready when you are"
-p=A.ea(A.bi(p,k,k,k,B.fs,k,k),k,k)
-o=l.f==null
-n=A.Ks(o?B.H2:B.H1,k,k,k)
-m=A.bi(o?"Start focus":"Pause timer",k,k,k,k,k,k)
-return A.ea(new A.df(B.BV,A.a6d(A.c([B.WC,B.fn,B.WG,B.lK,g,B.A6,s,p,B.lK,A.aCs(B.AR,A.c([new A.JY(!0,l.gah8(),k,k,k,k,B.y,k,!1,k,!0,k,new A.RC(m,n,k,k,k),k),new A.A_(!0,new A.al5(l),k,k,k,k,k,k,!1,k,!0,k,new A.Tf(B.WI,B.ot,k,k,k),k)],h),12,16),B.A6,B.X2],h),B.Gp,k,!1),k),k,k)}}
+p=l.w
+if(p)o="Session complete. Take a breath."
+else if(l.f!=null)o="Focus in progress"
+else o=l.x?"Paused":"Ready when you are"
+o=A.ea(A.bi(o,k,k,k,B.fs,k,k),k,k)
+n=l.f==null
+m=A.Ks(n?B.H2:B.H1,k,k,k)
+if(!n)p="Pause timer"
+else p=l.x&&!p?"Resume focus":"Start focus"
+p=A.bi(p,k,k,k,k,k,k)
+return A.ea(new A.df(B.BV,A.a6d(A.c([B.WC,B.fn,B.WG,B.lK,g,B.A6,s,o,B.lK,A.aCs(B.AR,A.c([new A.JY(!0,l.gah8(),k,k,k,k,B.y,k,!1,k,!0,k,new A.RC(p,m,k,k,k),k),new A.A_(!0,new A.al5(l),k,k,k,k,k,k,!1,k,!0,k,new A.Tf(B.WI,B.ot,k,k,k),k)],h),12,16),B.A6,B.X2],h),B.Gp,k,!1),k),k,k)}}
 A.al1.prototype={
 $0(){var s=this.a,r=this.b
 if(r.a<0)r=B.B
@@ -89420,6 +89424,7 @@ A.al0.prototype={
 $0(){var s=this.a,r=s.d
 if(r.a===0)s.d=s.e
 s.w=!1
+s.x=!0
 s.f=s.Q6().t6(s.d.a)},
 $S:0}
 A.al4.prototype={
@@ -89429,7 +89434,7 @@ $S:8}
 A.al3.prototype={
 $0(){var s=this.a
 s.d=s.e=A.ds(0,0,this.b,0)
-s.w=!1},
+s.x=s.w=!1},
 $S:0}
 A.al5.prototype={
 $0(){var s=this.a,r=s.r
@@ -89440,7 +89445,7 @@ A.al2.prototype={
 $0(){var s=this.a
 s.f=null
 s.d=s.e
-s.w=!1},
+s.x=s.w=!1},
 $S:0}
 A.XH.prototype={}
 A.afp.prototype={

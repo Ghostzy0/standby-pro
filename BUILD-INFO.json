@@ -1,27 +1,21 @@
 {
-  "release": "v1.1.0-preview.2",
-  "source": "1a21922f5d49790257c01e2106104f4acdd155f3",
-  "app_version": "1.1.0+3",
+  "release": "v1.1.0-preview.3",
+  "source": "f7d72ab4bb1df766723ac1094daece49cb46f087",
+  "app_version": "1.1.0+4",
+  "compiled_web_source": "8ce8581c26e6d4ea68a38d6509eb835f8858ecfe",
+  "app_and_ci_inputs_match": true,
   "flutter": "3.41.9",
   "dart": "3.11.5",
   "flutter_revision": "00b0c91f06209d9e4a41f71b7a512d6eb3b9c694",
-  "scope": "source and compiled browser preview; native binaries not distributed",
-  "source_files": 162,
+  "source_files": 178,
   "web_files": 37,
-  "checks": {
-    "locked_dependencies": true,
-    "source_ci_tests": 44,
-    "source_ci_analysis": "passed",
-    "clean_clone_web_compile": "passed",
-    "compiled_web_license_route": "passed"
-  },
-  "native_compile_ci": {
-    "source": "1a21922f5d49790257c01e2106104f4acdd155f3",
-    "android_run": "40120081277",
-    "ios_simulator_run": "40120575397",
-    "tests_each": 44,
-    "result": "passed",
-    "binaries_retained": false
-  },
-  "native_acceptance": "device/signing/accessibility/power gates remain open"
+  "source_ci": "40170456120",
+  "tests": 44,
+  "analysis": "passed",
+  "web_compile": "passed",
+  "browser_pause_resume_reset": "passed at390x844;weatheroff;originonly",
+  "native_current": "experimental SPM arm64/iOS15 min build4 compiled and privately recovered; remaining workflow validation pending",
+  "native_historical": "default Android/CocoaPods CI evidence belongs to preview2 source1a21922, not this release",
+  "public_native_binaries": false,
+  "device_signing_AT_power": "unaccepted"
 }
