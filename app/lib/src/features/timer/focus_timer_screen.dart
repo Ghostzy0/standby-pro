@@ -16,6 +16,7 @@ class _FocusTimerScreenState extends State<FocusTimerScreen>
   DateTime? _deadline;
   Timer? _ticker;
   bool _finished = false;
+  bool _sessionStarted = false;
   bool _visible = true;
   @override
   void initState() {
@@ -54,6 +55,7 @@ class _FocusTimerScreenState extends State<FocusTimerScreen>
       setState(() {
         if (_remaining == Duration.zero) _remaining = _selected;
         _finished = false;
+        _sessionStarted = true;
         _deadline = _now().add(_remaining);
       });
       _schedule();
@@ -110,6 +112,7 @@ class _FocusTimerScreenState extends State<FocusTimerScreen>
                               _selected = Duration(minutes: minutes);
                               _remaining = _selected;
                               _finished = false;
+                              _sessionStarted = false;
                             }),
                     ),
                 ],
@@ -137,6 +140,8 @@ class _FocusTimerScreenState extends State<FocusTimerScreen>
                     ? 'Session complete. Take a breath.'
                     : _deadline != null
                     ? 'Focus in progress'
+                    : _sessionStarted
+                    ? 'Paused'
                     : 'Ready when you are',
                 style: const TextStyle(color: Color(0xFFB1BBCB)),
               ),
@@ -153,7 +158,11 @@ class _FocusTimerScreenState extends State<FocusTimerScreen>
                     _deadline == null ? Icons.play_arrow : Icons.pause,
                   ),
                   label: Text(
-                    _deadline == null ? 'Start focus' : 'Pause timer',
+                    _deadline != null
+                        ? 'Pause timer'
+                        : _sessionStarted && !_finished
+                        ? 'Resume focus'
+                        : 'Start focus',
                   ),
                 ),
                 OutlinedButton.icon(
@@ -163,6 +172,7 @@ class _FocusTimerScreenState extends State<FocusTimerScreen>
                       _deadline = null;
                       _remaining = _selected;
                       _finished = false;
+                      _sessionStarted = false;
                     });
                   },
                   icon: const Icon(Icons.restart_alt),

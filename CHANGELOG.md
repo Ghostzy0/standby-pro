@@ -1,5 +1,9 @@
 # Change and patch log
 
+## Unreleased — timer pause feedback, 25 October 2026
+
+- A paused session now says Paused and offers Resume focus. Reset, choosing a fresh duration and completion keep distinct ready/complete states. The existing injected-clock regression covers pause hold, resume, reset and completion; total test count stays44. App build advances to1.1.0+4 for validation.
+
 ## v1.1.0-preview.2 — licence packaging and build verification,24 October2026
 
 - Bundles the app's full MIT notice and exposes it alongside Roboto in the existing open-source licences screen; package build advances to1.1.0+3.
