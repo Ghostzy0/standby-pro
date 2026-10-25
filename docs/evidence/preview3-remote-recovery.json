@@ -1,0 +1,19 @@
+{
+  "tag": "v1.1.0-preview.3",
+  "source": "f7d72ab4bb1df766723ac1094daece49cb46f087",
+  "downloaded_assets": 8,
+  "all_manifest_hashes_pass": true,
+  "all_assets_match_uploads": true,
+  "archives": {
+    "source": {
+      "files": 178,
+      "every_file_matches": true,
+      "safe_members": true
+    },
+    "web": {
+      "files": 37,
+      "every_file_matches": true,
+      "safe_members": true
+    }
+  }
+}
