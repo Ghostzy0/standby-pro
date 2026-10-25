@@ -32,7 +32,7 @@ Recorded toolchain: Flutter **3.41.9**, Dart **3.11.5**. [Dated build evidence](
 ```sh
 git clone https://github.com/Ghostzy0/standby-pro.git
 cd standby-pro
-git checkout v1.1.0-preview.2
+git checkout v1.1.0-preview.3
 cd app
 flutter pub get --enforce-lockfile
 flutter analyze
@@ -46,7 +46,7 @@ The [Flutter checks](https://github.com/Ghostzy0/standby-pro/actions/workflows/f
 
 Preferences retain their v1 key; invalid fields use safe defaults. Weather remains disabled when migrating old settings. Removing the app/site storage clears local preferences. A signing-identity change can require reinstalling and losing settings. Baseline and improved builds retain the same package ID and are alternative builds of one lineage.
 
-AI setup prompt: “Clone Ghostzy0/standby-pro at v1.1.0-preview.2. Read CONTEXT.md and release notes, use Flutter3.41.9, run locked dependencies, analysis and tests. Report native signing/device gaps before building.”
+AI setup prompt: “Clone Ghostzy0/standby-pro at v1.1.0-preview.3. Read CONTEXT.md and release notes, use Flutter3.41.9, run locked dependencies, analysis and tests. Report native signing/device gaps before building.”
 
 ## Preserved baseline and provenance
 

@@ -5,7 +5,7 @@ Updated25 October2026. Resumed by explicit owner instruction; existing Standby s
 ## Source and version
 
 - Historical source:9ce5e1676a1eae2681037d75eb354cd76addf207, tag v1.0.0-baseline.1 in this repository; app1.0.0+1.
-- Released improved app:1.1.0+3, source/web prerelease v1.1.0-preview.2. Earlier preview.1 remains immutable. Engine, interface, typography and documentation are separate focused PRs. No production signed native binary is claimed.
+- Improved app:1.1.0+4, source/web preview.3 publication in preparation; preview.2/app1.1.0+3 stays immutable. Earlier preview.1 remains immutable. Engine, interface, typography and documentation are separate focused PRs. No production signed native binary is claimed.
 - Flutter3.41.9/Dart3.11.5; existing dependencies locked. Android package ID com.ytchannel.standbypro. Preferences retain standby_settings_v1. New weather opt-in fields default off for migrated data.
 
 ## Completed checks and decisions
@@ -20,7 +20,7 @@ Published preview.2 assets were all downloaded and verified: 8 assets, 162 exact
 
 ## 25 October native finding and fix
 
-The first simulator pause capture showed04:54 while status still said Ready when you are and action Start focus. Build1.1.0+4 now uses explicit session-started state to show Paused/Resume focus. The existing injected-clock widget regression is expanded in place (44total tests), its focused run and analysis passed; independent code review found coherent start/pause/resume/reset/duration/completion transitions. The fixed package and remaining native workflows await actual validation. Release tags/assets remain unchanged.
+The first simulator pause capture showed04:54 while status still said Ready when you are and action Start focus. Build1.1.0+4 now uses explicit session-started state to show Paused/Resume focus. The existing injected-clock widget regression is expanded in place (44total tests), its focused run and analysis passed; independent code review found coherent start/pause/resume/reset/duration/completion transitions. Source PR13 merged at8ce8581 after CI44 tests/analysis/web compilation passed. Clean compiled-browser390×844 runtime verifies Paused/Resume, resumed progress and reset toReady with no page errors and origin-only requests. Fixed build4 compiled in the same isolated SPM/arm64/min15 configuration, and all62 files/modes were privately downloaded/restored and matched before the next remaining-workflow simulator reservation. Native validation is still pending. Release tags/assets remain unchanged.
 
 ## Remaining gates
 
